@@ -24,7 +24,7 @@ const LoginForm = () => {
     <div className='form login-form'>
       <h2>Login</h2>
       <form onSubmit={(event) => loginUser(event)}>
-        <div>
+        <div className='form-input'>
           <label>Username:</label>
           <input
             name='username'
@@ -33,7 +33,7 @@ const LoginForm = () => {
             type='text'
           />
         </div>
-        <div>
+        <div className='form-input'>
           <label>Password:</label>
           <input
             name='password'
@@ -42,9 +42,11 @@ const LoginForm = () => {
             type='password'
           />
         </div>
-        <button type='submit'>Login</button>
+        <div className='login-form-btns'>
+          <button className='btn not-registered-btn' onClick={() => setRegistered(false)}>Not registered?</button>
+          <button className='btn login-btn' type='submit'>Login</button>
+        </div>
       </form>
-      <button onClick={() => setRegistered(false)}>Not registered?</button>
       { !registered && <RegistrationForm /> }
     </div>
   )
