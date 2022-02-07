@@ -2,15 +2,11 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { login } from '../reducers/userReducer'
 
-import RegistrationForm from './RegistrationForm'
-
-
 const LoginForm = () => {
   const dispatch = useDispatch()
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [registered, setRegistered] = useState(true)
 
   const loginUser = (event) => {
     event.preventDefault()
@@ -43,11 +39,10 @@ const LoginForm = () => {
           />
         </div>
         <div className='login-form-btns'>
-          <button className='btn not-registered-btn' onClick={() => setRegistered(false)}>Not registered?</button>
+          <button className='btn not-registered-btn' type='button'>Not registered?</button>
           <button className='btn login-btn' type='submit'>Login</button>
         </div>
       </form>
-      { !registered && <RegistrationForm /> }
     </div>
   )
 }

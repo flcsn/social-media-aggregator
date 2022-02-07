@@ -19,31 +19,37 @@ const RegistrationForm = () => {
   }
 
   return (
-    <div>
+    <div className='form registration-form hidden'>
       <h2>Register an account</h2>
       <form onSubmit={(event) => registerUser(event)}>
-        <label>Username</label>
-        <input
-          name='username'
-          type='text'
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
-        />
-        <label>Password</label>
-        <input
-          name='password'
-          type='password'
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-        />
-        <label>Email address</label>
-        <input
-          name='email'
-          type='email'
-          value={email}
-          onChange={({ target }) => setEmail(target.value)}
-        />
-        <button type='submit'>Register</button>
+        <div className='form-input'>
+          <label>Username:</label>
+          <input
+            name='username'
+            type='text'
+            value={username}
+            onChange={({ target }) => setUsername(target.value)}
+          />
+        </div>
+        <div className='form-input'>
+          <label>Password:</label>
+          <input
+            name='password'
+            type='password'
+            value={password}
+            onChange={({ target }) => setPassword(target.value)}
+          />
+        </div>
+        <div className='form-input'>
+          <label>Email address:</label>
+          <input
+            name='email'
+            type='email'
+            value={email}
+            onChange={({ target }) => setEmail(target.value)}
+          />
+        </div>
+        <button className='btn register-btn' type='submit'>Register</button>
       </form>
     </div>
   )
