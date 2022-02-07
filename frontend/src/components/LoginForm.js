@@ -21,23 +21,27 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
+    <div className='form login-form'>
       <h2>Login</h2>
       <form onSubmit={(event) => loginUser(event)}>
-        <label>Username</label>
-        <input
-          name='username'
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
-          type='text'
-        />
-        <label>Password</label>
-        <input
-          name='password'
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-          type='password'
-        />
+        <div>
+          <label>Username:</label>
+          <input
+            name='username'
+            value={username}
+            onChange={({ target }) => setUsername(target.value)}
+            type='text'
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            name='password'
+            value={password}
+            onChange={({ target }) => setPassword(target.value)}
+            type='password'
+          />
+        </div>
         <button type='submit'>Login</button>
       </form>
       <button onClick={() => setRegistered(false)}>Not registered?</button>
