@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { rememberLocalUser } from './reducers/userReducer'
 
-import Homepage from './components/Homepage'
-import LoginForm from './components/LoginForm'
+import HomePage from './components/HomePage'
+import LandingPage from './components/LandingPage'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -17,12 +17,12 @@ const App = () => {
 
   if (!user) {
     return (
-      <LoginForm />
+      <LandingPage />
     )
   }
 
   return (
-    <Homepage />
+    <HomePage />
   )
 }
 
