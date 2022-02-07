@@ -9,22 +9,60 @@
 html, body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.4;
-  color: #000
+  color: #000;
+  margin: 0px;
 }
 
+html, body, #root, #root > div {
+  height: 100%;
+}
 
-/* Forms */
+/* Generic Styles */
 
 .form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
   padding: 20px;
 }
 
+.form-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 3px 5px;
+  border-radius: 50px;
+}
+
+.img {
+  max-width: 100%;
+}
+
+/* Login Form */
+
+.login-form {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  width: fit-content;
+  background-color: white;
+}
+
+.login-form-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
 /* Landing Page */
 
-.landing-page img {
-  width: 100%;
-  overflow: hidden;
+.landing-page {
+  background-image: url('img/test.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
