@@ -26,6 +26,13 @@ html, body, #root, #root > div {
   align-items: center;
   border: 1px solid black;
   padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+}
+
+.form h2, div, button {
+  margin-bottom: 5px;
 }
 
 .form-input {
@@ -42,6 +49,19 @@ html, body, #root, #root > div {
   max-width: 100%;
 }
 
+.hidden {
+  display: none
+}
+
+.mask {
+  display: block;
+  position: fixed;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
 /* Login Form */
 
 .login-form {
@@ -49,13 +69,21 @@ html, body, #root, #root > div {
   right: 20px;
   top: 30%;
   width: fit-content;
-  background-color: white;
 }
 
 .login-form-btns {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+}
+
+/* Registration Form */
+
+.registration-form {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  text-align: center;
+  z-index: 2;
 }
 
 /* Landing Page */
@@ -65,4 +93,5 @@ html, body, #root, #root > div {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: -1;
 }
