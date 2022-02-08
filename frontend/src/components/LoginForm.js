@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { login } from '../reducers/userReducer'
 
-const LoginForm = () => {
+const LoginForm = ({ openRegistrationForm }) => {
   const dispatch = useDispatch()
 
   const [username, setUsername] = useState('')
@@ -39,7 +39,11 @@ const LoginForm = () => {
           />
         </div>
         <div className='login-form-btns'>
-          <button className='btn not-registered-btn' type='button'>Not registered?</button>
+          <button
+            className='btn not-registered-btn'
+            type='button'
+            onClick={(event) => openRegistrationForm(event)}
+          >Not registered?</button>
           <button className='btn login-btn' type='submit'>Login</button>
         </div>
       </form>
