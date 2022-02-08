@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { register } from '../reducers/userReducer'
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ isRegistered }) => {
   const dispatch = useDispatch()
+  console.log('registration form', isRegistered)
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -19,7 +20,7 @@ const RegistrationForm = () => {
   }
 
   return (
-    <div className='form registration-form hidden'>
+    <div className={`form registration-form ${ isRegistered ? 'hidden' : '' }`}>
       <h2>Register an account</h2>
       <form onSubmit={(event) => registerUser(event)}>
         <div className='form-input'>
